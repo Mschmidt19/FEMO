@@ -4,11 +4,11 @@ To be updated
 ## User Stories
 
 Key:  
-Completed - :heavy_check_mark:
-Functionality complete, needs styling - :heavy_plus_sign:
-In progress - :construction:
-Next iteration - :soon:
-Haven't started - :beers:
+Completed - :heavy_check_mark:  
+Functionality complete, needs styling - :heavy_plus_sign:  
+In progress - :construction:  
+Next iteration - :soon:  
+Haven't started - :beers:  
 
 ### MVP
 :heavy_check_mark:
