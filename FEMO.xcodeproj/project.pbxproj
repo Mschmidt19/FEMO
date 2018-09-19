@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B4541152152775900643962 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 3B4541142152775900643962 /* Sounds */; };
 		3BE79E7F215259C800E8FBB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79E7E215259C800E8FBB8 /* AppDelegate.swift */; };
 		3BE79E81215259C800E8FBB8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79E80215259C800E8FBB8 /* GameScene.sks */; };
 		3BE79E83215259C800E8FBB8 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79E82215259C800E8FBB8 /* Actions.sks */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B4541142152775900643962 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = "../../Indiana Codes/Sounds"; sourceTree = "<group>"; };
 		3BE79E7B215259C800E8FBB8 /* FEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FEMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE79E7E215259C800E8FBB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BE79E80215259C800E8FBB8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				3BE79E86215259C800E8FBB8 /* GameViewController.swift */,
 				3BE79E88215259C800E8FBB8 /* Main.storyboard */,
 				3BE79E8B215259C800E8FBB8 /* Assets.xcassets */,
+				3B4541142152775900643962 /* Sounds */,
 				3BE79E8D215259C800E8FBB8 /* LaunchScreen.storyboard */,
 				3BE79E90215259C800E8FBB8 /* Info.plist */,
 			);
@@ -245,6 +248,7 @@
 			files = (
 				3BE79E8A215259C800E8FBB8 /* Main.storyboard in Resources */,
 				3BE79E81215259C800E8FBB8 /* GameScene.sks in Resources */,
+				3B4541152152775900643962 /* Sounds in Resources */,
 				3BE79E8C215259C800E8FBB8 /* Assets.xcassets in Resources */,
 				3BE79E8F215259C800E8FBB8 /* LaunchScreen.storyboard in Resources */,
 				3BE79E83215259C800E8FBB8 /* Actions.sks in Resources */,
