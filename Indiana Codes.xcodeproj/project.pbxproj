@@ -15,6 +15,7 @@
 		EA3E54AD21524842007ABE1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3E54AB21524842007ABE1A /* Main.storyboard */; };
 		EA3E54AF21524843007ABE1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA3E54AE21524843007ABE1A /* Assets.xcassets */; };
 		EA3E54B221524843007ABE1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3E54B021524843007ABE1A /* LaunchScreen.storyboard */; };
+		EA3E54BC21525BF2007ABE1A /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA3E54BB21525BF2007ABE1A /* tap.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EA3E54AE21524843007ABE1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA3E54B121524843007ABE1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA3E54B321524843007ABE1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA3E54BB21525BF2007ABE1A /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +69,19 @@
 				EA3E54A921524842007ABE1A /* GameViewController.swift */,
 				EA3E54AB21524842007ABE1A /* Main.storyboard */,
 				EA3E54AE21524843007ABE1A /* Assets.xcassets */,
+				EA3E54BA21525BF2007ABE1A /* Sounds */,
 				EA3E54B021524843007ABE1A /* LaunchScreen.storyboard */,
 				EA3E54B321524843007ABE1A /* Info.plist */,
 			);
 			path = "Indiana Codes";
+			sourceTree = "<group>";
+		};
+		EA3E54BA21525BF2007ABE1A /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				EA3E54BB21525BF2007ABE1A /* tap.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA3E54BC21525BF2007ABE1A /* tap.wav in Resources */,
 				EA3E54AD21524842007ABE1A /* Main.storyboard in Resources */,
 				EA3E54A421524842007ABE1A /* GameScene.sks in Resources */,
 				EA3E54AF21524843007ABE1A /* Assets.xcassets in Resources */,
