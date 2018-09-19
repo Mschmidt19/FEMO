@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B4541152152775900643962 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 3B4541142152775900643962 /* Sounds */; };
 		3BE79E7F215259C800E8FBB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79E7E215259C800E8FBB8 /* AppDelegate.swift */; };
 		3BE79E81215259C800E8FBB8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79E80215259C800E8FBB8 /* GameScene.sks */; };
 		3BE79E83215259C800E8FBB8 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79E82215259C800E8FBB8 /* Actions.sks */; };
@@ -18,7 +17,7 @@
 		3BE79E8F215259C800E8FBB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79E8D215259C800E8FBB8 /* LaunchScreen.storyboard */; };
 		3BE79E9A215259C900E8FBB8 /* FEMOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79E99215259C900E8FBB8 /* FEMOTests.swift */; };
 		3BE79EA5215259C900E8FBB8 /* FEMOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79EA4215259C900E8FBB8 /* FEMOUITests.swift */; };
-		3BE79EB421525BFC00E8FBB8 /* projectFiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79EB321525BFB00E8FBB8 /* projectFiles.png */; };
+		EAB15C942152958F00304419 /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAB15C932152958F00304419 /* tap.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3B4541142152775900643962 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = "../../Indiana Codes/Sounds"; sourceTree = "<group>"; };
 		3BE79E7B215259C800E8FBB8 /* FEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FEMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE79E7E215259C800E8FBB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BE79E80215259C800E8FBB8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -57,7 +55,7 @@
 		3BE79EA4215259C900E8FBB8 /* FEMOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FEMOUITests.swift; sourceTree = "<group>"; };
 		3BE79EA6215259C900E8FBB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BE79EB221525A8F00E8FBB8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		3BE79EB321525BFB00E8FBB8 /* projectFiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = projectFiles.png; path = ../projectFiles.png; sourceTree = "<group>"; };
+		EAB15C932152958F00304419 /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				3BE79EB221525A8F00E8FBB8 /* README.md */,
-				3BE79EB321525BFB00E8FBB8 /* projectFiles.png */,
 				3BE79E7D215259C800E8FBB8 /* FEMO */,
 				3BE79E98215259C900E8FBB8 /* FEMOTests */,
 				3BE79EA3215259C900E8FBB8 /* FEMOUITests */,
@@ -117,7 +114,7 @@
 				3BE79E86215259C800E8FBB8 /* GameViewController.swift */,
 				3BE79E88215259C800E8FBB8 /* Main.storyboard */,
 				3BE79E8B215259C800E8FBB8 /* Assets.xcassets */,
-				3B4541142152775900643962 /* Sounds */,
+				EAB15C922152958F00304419 /* Sounds */,
 				3BE79E8D215259C800E8FBB8 /* LaunchScreen.storyboard */,
 				3BE79E90215259C800E8FBB8 /* Info.plist */,
 			);
@@ -140,6 +137,14 @@
 				3BE79EA6215259C900E8FBB8 /* Info.plist */,
 			);
 			path = FEMOUITests;
+			sourceTree = "<group>";
+		};
+		EAB15C922152958F00304419 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				EAB15C932152958F00304419 /* tap.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,13 +251,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB15C942152958F00304419 /* tap.wav in Resources */,
 				3BE79E8A215259C800E8FBB8 /* Main.storyboard in Resources */,
 				3BE79E81215259C800E8FBB8 /* GameScene.sks in Resources */,
-				3B4541152152775900643962 /* Sounds in Resources */,
 				3BE79E8C215259C800E8FBB8 /* Assets.xcassets in Resources */,
 				3BE79E8F215259C800E8FBB8 /* LaunchScreen.storyboard in Resources */,
 				3BE79E83215259C800E8FBB8 /* Actions.sks in Resources */,
-				3BE79EB421525BFC00E8FBB8 /* projectFiles.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

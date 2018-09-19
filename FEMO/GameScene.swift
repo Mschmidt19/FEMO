@@ -15,14 +15,16 @@ class GameScene: SKScene {
     var player1:SKSpriteNode?
     
     var currentTile = 0
+    var currentTileRow = 1
     var movingToTile = false
+    var moveDuration = 0.4
     
     var dieRoll = 0
     
     let moveSound = SKAction.playSoundFileNamed("tap.wav", waitForCompletion: false)
     
     func setupTiles() {
-        for i in 1...21 {
+        for i in 1...30 {
             if let tile = self.childNode(withName: "tile\(i)") as? SKSpriteNode {
                 tilesArray?.append(tile)
             }
@@ -50,8 +52,17 @@ class GameScene: SKScene {
         
         guard let nextTile = tilesArray?[currentTile + 1].position else {return}
         
+        if nextTile.x == (tilesArray?[currentTile].position.x)! {
+            if currentTileRow % 2 == 1 {
+                player1?.xScale = -1.0
+            } else {
+                player1?.xScale = 1.0
+            }
+            currentTileRow += 1
+        }
+        
         if let player1 = self.player1 {
-            let moveAction = SKAction.move(to: CGPoint(x: nextTile.x, y: nextTile.y + 10), duration: 0.8)
+            let moveAction = SKAction.move(to: CGPoint(x: nextTile.x, y: nextTile.y + 10), duration: moveDuration)
             player1.run(moveAction, completion: {
                 self.movingToTile = false
             })
@@ -69,8 +80,12 @@ class GameScene: SKScene {
     func playTurn() {
         rollDie()
         print("You rolled \(dieRoll)")
+        var delayAdder = moveDuration
         for _ in 1 ... dieRoll {
-            moveToNextTile()
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
+                self.moveToNextTile()
+            }
+            delayAdder += moveDuration
         }
     }
     
