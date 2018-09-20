@@ -24,7 +24,7 @@ class GameScene: SKScene {
     let moveSound = SKAction.playSoundFileNamed("tap.wav", waitForCompletion: false)
     
     func setupTiles() {
-        for i in 1...100 {
+        for i in 1...30 {
             if let tile = self.childNode(withName: "tile\(i)") as? SKSpriteNode {
                 tilesArray?.append(tile)
             }
@@ -32,11 +32,11 @@ class GameScene: SKScene {
     }
     
     func createPlayer1() {
-        player1 = SKSpriteNode(imageNamed: "character")
+        player1 = SKSpriteNode(imageNamed: "robot1")
         
         guard let player1PositionX = tilesArray?.first?.position.x else {return}
         guard let player1PositionY = tilesArray?.first?.position.y else {return}
-        player1?.position = CGPoint(x: player1PositionX, y: player1PositionY + 10)
+        player1?.position = CGPoint(x: player1PositionX, y: player1PositionY + 15)
         
         self.addChild(player1!)
     }
@@ -62,7 +62,7 @@ class GameScene: SKScene {
         }
         
         if let player1 = self.player1 {
-            let moveAction = SKAction.move(to: CGPoint(x: nextTile.x, y: nextTile.y + 10), duration: moveDuration)
+            let moveAction = SKAction.move(to: CGPoint(x: nextTile.x, y: nextTile.y + 15), duration: moveDuration)
             player1.run(moveAction, completion: {
                 self.movingToTile = false
             })
