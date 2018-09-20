@@ -24,7 +24,7 @@ class GameScene: SKScene {
     let moveSound = SKAction.playSoundFileNamed("tap.wav", waitForCompletion: false)
     
     func setupTiles() {
-        for i in 1...30 {
+        for i in 1...100 {
             if let tile = self.childNode(withName: "tile\(i)") as? SKSpriteNode {
                 tilesArray?.append(tile)
             }
