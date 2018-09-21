@@ -19,6 +19,8 @@
 		3BE79EA5215259C900E8FBB8 /* FEMOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79EA4215259C900E8FBB8 /* FEMOUITests.swift */; };
 		EA4E80BB2154EA4B0036CC2B /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4E80BA2154EA4B0036CC2B /* QuestionViewController.swift */; };
 		EA4E80BE2154F49A0036CC2B /* QuestionPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4E80BC2154F49A0036CC2B /* QuestionPopupViewController.storyboard */; };
+		EA4E80C5215523900036CC2B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4E80C4215523900036CC2B /* Question.swift */; };
+		EA4E80C72155247E0036CC2B /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4E80C62155247E0036CC2B /* QuestionList.swift */; };
 		EAB15C942152958F00304419 /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAB15C932152958F00304419 /* tap.wav */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		3BE79EB221525A8F00E8FBB8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA4E80BA2154EA4B0036CC2B /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		EA4E80BD2154F49A0036CC2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FEMO/Base.lproj/QuestionPopupViewController.storyboard; sourceTree = "<group>"; };
+		EA4E80C4215523900036CC2B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		EA4E80C62155247E0036CC2B /* QuestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
 		EAB15C932152958F00304419 /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,17 +116,18 @@
 			isa = PBXGroup;
 			children = (
 				3BE79E7E215259C800E8FBB8 /* AppDelegate.swift */,
-				3BE79E80215259C800E8FBB8 /* GameScene.sks */,
-				3BE79E82215259C800E8FBB8 /* Actions.sks */,
-				3BE79E84215259C800E8FBB8 /* GameScene.swift */,
 				3BE79E86215259C800E8FBB8 /* GameViewController.swift */,
+				3BE79E82215259C800E8FBB8 /* Actions.sks */,
 				3BE79E88215259C800E8FBB8 /* Main.storyboard */,
-				3BE79E8B215259C800E8FBB8 /* Assets.xcassets */,
+				EA4E80CA215554DE0036CC2B /* SpaceGame */,
 				EAB15C922152958F00304419 /* Sounds */,
+				3BE79E8B215259C800E8FBB8 /* Assets.xcassets */,
 				3BE79E8D215259C800E8FBB8 /* LaunchScreen.storyboard */,
 				3BE79E90215259C800E8FBB8 /* Info.plist */,
 				EA4E80BA2154EA4B0036CC2B /* QuestionViewController.swift */,
 				EA4E80BC2154F49A0036CC2B /* QuestionPopupViewController.storyboard */,
+				EA4E80C4215523900036CC2B /* Question.swift */,
+				EA4E80C62155247E0036CC2B /* QuestionList.swift */,
 			);
 			path = FEMO;
 			sourceTree = "<group>";
@@ -143,6 +148,15 @@
 				3BE79EA6215259C900E8FBB8 /* Info.plist */,
 			);
 			path = FEMOUITests;
+			sourceTree = "<group>";
+		};
+		EA4E80CA215554DE0036CC2B /* SpaceGame */ = {
+			isa = PBXGroup;
+			children = (
+				3BE79E80215259C800E8FBB8 /* GameScene.sks */,
+				3BE79E84215259C800E8FBB8 /* GameScene.swift */,
+			);
+			path = SpaceGame;
 			sourceTree = "<group>";
 		};
 		EAB15C922152958F00304419 /* Sounds */ = {
@@ -288,8 +302,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4E80C5215523900036CC2B /* Question.swift in Sources */,
 				3BE79E85215259C800E8FBB8 /* GameScene.swift in Sources */,
 				3BE79E87215259C800E8FBB8 /* GameViewController.swift in Sources */,
+				EA4E80C72155247E0036CC2B /* QuestionList.swift in Sources */,
 				EA4E80BB2154EA4B0036CC2B /* QuestionViewController.swift in Sources */,
 				3BE79E7F215259C800E8FBB8 /* AppDelegate.swift in Sources */,
 			);

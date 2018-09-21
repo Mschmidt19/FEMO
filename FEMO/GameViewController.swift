@@ -11,6 +11,10 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    let allQuestions = QuestionList()
+    var questionNumber: Int = 0
+    var correctAnswer: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,7 @@ class GameViewController: UIViewController {
                 if let gameScene = scene as? GameScene {
                     gameScene.viewController = self
                 }
+                
                 
                 // Present the scene
                 view.presentScene(scene)

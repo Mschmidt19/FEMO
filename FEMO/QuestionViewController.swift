@@ -17,42 +17,48 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var button3: UIButton!
     @IBOutlet weak var button4: UIButton!
     
+    let gameViewController: GameViewController = GameViewController(nibName: nil, bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-    @IBAction func button1_TouchUpInside(_ sender: UIButton) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        updateQuestion()
+    }
+    
+    @IBAction func answerPressed(_ sender: UIButton) {
+        if sender.tag == gameViewController.correctAnswer {
+            print("correct")
+        } else {
+            print("incorrect")
+        }
         
         dismiss(animated: true)
     }
     
-    
-    @IBAction func button2_TouchUpInside(_ sender: UIButton) {
+    func updateQuestion() {
         
-        dismiss(animated: true)
-    }
-    
-    @IBAction func button3_TouchUpInside(_ sender: UIButton) {
+        print(gameViewController.allQuestions.list.count)
+        for i in 0...gameViewController.allQuestions.list.count-1 {
+            print(gameViewController.allQuestions.list[i].question)
+        }
         
-        dismiss(animated: true)
-    }
-    
-    @IBAction func button4_TouchUpInside(_ sender: UIButton) {
+        questionLabel.text = self.gameViewController.allQuestions.list[self.gameViewController.questionNumber].question
+    button1.setTitle(self.gameViewController.allQuestions.list[self.gameViewController.questionNumber].optionA, for: UIControlState.normal)
+    button2.setTitle(self.gameViewController.allQuestions.list[self.gameViewController.questionNumber].optionB, for: UIControlState.normal)
+    button3.setTitle(self.gameViewController.allQuestions.list[self.gameViewController.questionNumber].optionC, for: UIControlState.normal)
+    button4.setTitle(self.gameViewController.allQuestions.list[self.gameViewController.questionNumber].optionD, for: UIControlState.normal)
         
-        dismiss(animated: true)
+        gameViewController.correctAnswer = self.gameViewController.allQuestions.list[self.gameViewController.questionNumber].correctAnswer
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateQuestionUI() {
+        
     }
-    */
-
+    
 }
