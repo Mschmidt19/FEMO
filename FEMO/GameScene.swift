@@ -18,20 +18,25 @@ class GameScene: SKScene {
     var movingToTile = false
     var moveDuration = 0.4
     var indexOfLastTile = 0
-  
+    var arrsize: Int{
+        get {
+            return tilesArray!.count
+        }
+    }
     
     var dieRoll = 0
     
     let moveSound = SKAction.playSoundFileNamed("tap.wav", waitForCompletion: false)
     
+    
     func setupTiles() {
-        for i in 1...30 {
+        for i in 1...100 {
             if let tile = self.childNode(withName: "tile\(i)") as? SKSpriteNode {
                 tilesArray?.append(tile)
             }
         }
 //        let a = tilesArray!.count
-//         print(a)
+//        print(a)
     }
     
     func createPlayer1() {
@@ -83,10 +88,6 @@ class GameScene: SKScene {
         }
     }
     
-//    func rollDie() {
-//        let roll = arc4random_uniform(_:6) + 1
-//        dieRoll = Int(roll)
-//    }
     
     func playTurn() {
         rollDie()
