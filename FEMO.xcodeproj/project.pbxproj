@@ -17,6 +17,8 @@
 		3BE79E8F215259C800E8FBB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79E8D215259C800E8FBB8 /* LaunchScreen.storyboard */; };
 		3BE79E9A215259C900E8FBB8 /* FEMOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79E99215259C900E8FBB8 /* FEMOTests.swift */; };
 		3BE79EA5215259C900E8FBB8 /* FEMOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79EA4215259C900E8FBB8 /* FEMOUITests.swift */; };
+		EA4E80BB2154EA4B0036CC2B /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4E80BA2154EA4B0036CC2B /* QuestionViewController.swift */; };
+		EA4E80BE2154F49A0036CC2B /* QuestionPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4E80BC2154F49A0036CC2B /* QuestionPopupViewController.storyboard */; };
 		EAB15C942152958F00304419 /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAB15C932152958F00304419 /* tap.wav */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		3BE79EA4215259C900E8FBB8 /* FEMOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FEMOUITests.swift; sourceTree = "<group>"; };
 		3BE79EA6215259C900E8FBB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BE79EB221525A8F00E8FBB8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EA4E80BA2154EA4B0036CC2B /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		EA4E80BD2154F49A0036CC2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FEMO/Base.lproj/QuestionPopupViewController.storyboard; sourceTree = "<group>"; };
 		EAB15C932152958F00304419 /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +121,8 @@
 				EAB15C922152958F00304419 /* Sounds */,
 				3BE79E8D215259C800E8FBB8 /* LaunchScreen.storyboard */,
 				3BE79E90215259C800E8FBB8 /* Info.plist */,
+				EA4E80BA2154EA4B0036CC2B /* QuestionViewController.swift */,
+				EA4E80BC2154F49A0036CC2B /* QuestionPopupViewController.storyboard */,
 			);
 			path = FEMO;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 			files = (
 				EAB15C942152958F00304419 /* tap.wav in Resources */,
 				3BE79E8A215259C800E8FBB8 /* Main.storyboard in Resources */,
+				EA4E80BE2154F49A0036CC2B /* QuestionPopupViewController.storyboard in Resources */,
 				3BE79E81215259C800E8FBB8 /* GameScene.sks in Resources */,
 				3BE79E8C215259C800E8FBB8 /* Assets.xcassets in Resources */,
 				3BE79E8F215259C800E8FBB8 /* LaunchScreen.storyboard in Resources */,
@@ -283,6 +290,7 @@
 			files = (
 				3BE79E85215259C800E8FBB8 /* GameScene.swift in Sources */,
 				3BE79E87215259C800E8FBB8 /* GameViewController.swift in Sources */,
+				EA4E80BB2154EA4B0036CC2B /* QuestionViewController.swift in Sources */,
 				3BE79E7F215259C800E8FBB8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +341,14 @@
 				3BE79E8E215259C800E8FBB8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EA4E80BC2154F49A0036CC2B /* QuestionPopupViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA4E80BD2154F49A0036CC2B /* Base */,
+			);
+			name = QuestionPopupViewController.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

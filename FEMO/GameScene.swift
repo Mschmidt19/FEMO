@@ -11,6 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    var viewController: GameViewController!
+    
     var tilesArray:[SKSpriteNode]? = [SKSpriteNode]()
     var player1:SKSpriteNode?
     
@@ -96,6 +98,11 @@ class GameScene: SKScene {
             
             if node?.name == "nextTileButton" {
                 playTurn()
+            } else if node?.name == "showPopupButton" {
+                let sb = UIStoryboard(name: "QuestionPopupViewController", bundle: nil)
+                if let popup = sb.instantiateInitialViewController() {
+                    self.viewController.present(popup, animated: true)
+                }
             }
         }
     }
