@@ -15,7 +15,6 @@ class GameScene: SKScene {
     var player1:SKSpriteNode?
     
     var currentTile = 0
-    var currentTileRow = 1
     var movingToTile = false
     var moveDuration = 0.4
     
@@ -29,6 +28,8 @@ class GameScene: SKScene {
                 tilesArray?.append(tile)
             }
         }
+//        let a = tilesArray!.count
+//         print(a)
     }
     
     func createPlayer1() {
@@ -50,19 +51,17 @@ class GameScene: SKScene {
         player1?.removeAllActions()
         movingToTile = true
         
-        guard let nextTile = tilesArray?[currentTile + 1].position else {return}
+        guard let nextTile = tilesArray?[currentTile + 1] else {return}
         
-        if nextTile.x == (tilesArray?[currentTile].position.x)! {
-            if currentTileRow % 2 == 1 {
-                player1?.xScale = -1.0
-            } else {
-                player1?.xScale = 1.0
-            }
-            currentTileRow += 1
+        if nextTile == self.childNode(withName: "tile7") {
+            player1?.xScale = -1.0
+        }
+        if nextTile == self.childNode(withName: "tile16") {
+            player1?.xScale = 1.0
         }
         
         if let player1 = self.player1 {
-            let moveAction = SKAction.move(to: CGPoint(x: nextTile.x, y: nextTile.y + 15), duration: moveDuration)
+            let moveAction = SKAction.move(to: CGPoint(x: nextTile.position.x, y: nextTile.position.y + 15), duration: moveDuration)
             player1.run(moveAction, completion: {
                 self.movingToTile = false
             })
