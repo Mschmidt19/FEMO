@@ -17,6 +17,8 @@ class GameScene: SKScene {
     var currentTile = 0
     var movingToTile = false
     var moveDuration = 0.4
+    var indexOfLastTile = 0
+  
     
     var dieRoll = 0
     
@@ -45,6 +47,7 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         setupTiles()
         createPlayer1()
+        indexOfLastTile = (tilesArray?.index{$0 === tilesArray?.last})!
     }
     
     func moveToNextTile() {
@@ -73,8 +76,17 @@ class GameScene: SKScene {
     
     func rollDie() {
         let roll = arc4random_uniform(_:6) + 1
+        if indexOfLastTile - currentTile < roll {
+            dieRoll = Int(indexOfLastTile - currentTile)
+        } else {
         dieRoll = Int(roll)
+        }
     }
+    
+//    func rollDie() {
+//        let roll = arc4random_uniform(_:6) + 1
+//        dieRoll = Int(roll)
+//    }
     
     func playTurn() {
         rollDie()
