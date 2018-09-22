@@ -102,9 +102,9 @@ class QuestionScene: SKScene {
         let questionCount = questionList.count
         let tag = ((node.userData!.object(forKey: "tag")!) as! Int)
         if tag == questionList[currentQuestion % questionCount].correctAnswer {
-            print("Correct")
+            userDefaults.set(true, forKey: "lastAnswerCorrect")
         } else {
-            print("Incorrect")
+            userDefaults.set(false, forKey: "lastAnswerCorrect")
         }
         currentQuestion += 1
         saveGameState()

@@ -25,6 +25,8 @@ class GameScene: SKScene {
     
     var dieRoll = 0
     
+    var lastAnswerLabel: SKLabelNode!
+    
     let moveSound = SKAction.playSoundFileNamed("tap.wav", waitForCompletion: false)
     
     func setupTiles() {
@@ -42,9 +44,10 @@ class GameScene: SKScene {
         guard let player1PositionY = tilesArray?[currentTile].position.y else {return}
         player1?.position = CGPoint(x: player1PositionX, y: player1PositionY + 15)
         
-        let playerXScale = userDefaults.integer(forKey: "playerXScale")
-        if playerXScale != 0 {
-            player1?.xScale = CGFloat(playerXScale)
+        if isKeyPresentInUserDefaults(key: "playerXScale") {
+            player1?.xScale = CGFloat(userDefaults.integer(forKey: "playerXScale"))
+        } else {
+            player1?.xScale = 1.0
         }
         
         self.addChild(player1!)
@@ -53,14 +56,24 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         setupTiles()
         
-        let savedTile = userDefaults.integer(forKey: "currentTile")
-        if savedTile > 0 {
-            currentTile = savedTile
+        if isKeyPresentInUserDefaults(key: "currentTile") {
+            currentTile = userDefaults.integer(forKey: "currentTile")
         } else {
             currentTile = 0
         }
-        
         createPlayer1()
+        
+        lastAnswerLabel = (self.childNode(withName: "popupAnswerLabel") as! SKLabelNode)
+        if isKeyPresentInUserDefaults(key: "lastAnswerCorrect") {
+            if userDefaults.bool(forKey: "lastAnswerCorrect") == true {
+                lastAnswerLabel.text = "Correct"
+            } else {
+                lastAnswerLabel.text = "Incorrect"
+            }
+        } else {
+            lastAnswerLabel.text = ""
+        }
+        
     }
     
     func moveToNextTile() {
