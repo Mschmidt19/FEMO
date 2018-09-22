@@ -52,6 +52,8 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         setupTiles()
         createPlayer1()
+        let menu_buttonNode = self.childNode(withName: "Menu_button") as! SKSpriteNode
+        menu_buttonNode.texture = SKTexture(imageNamed: "menu_button")
         indexOfLastTile = (tilesArray?.index{$0 === tilesArray?.last})!
     }
     
@@ -108,6 +110,13 @@ class GameScene: SKScene {
             
             if node?.name == "nextTileButton" {
                 playTurn()
+            }
+            
+            if node?.name == "Menu_button" {
+                let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
+                let menuPage = Main_page(size: self.size)
+                self.view?.presentScene(menuPage, transition: transition)
+            
             }
         }
     }

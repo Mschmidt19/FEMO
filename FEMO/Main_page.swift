@@ -14,8 +14,8 @@ class Main_page: SKScene {
     var Desert_sceneNode: SKSpriteNode!
     
     override func didMove(to view: SKView) {
-        Space_sceneNode = self.childNode(withName: "Space_scene") as! SKSpriteNode
-        Desert_sceneNode = self.childNode(withName: "Desert_scene") as! SKSpriteNode
+        let Space_sceneNode = self.childNode(withName: "Space_scene") as! SKSpriteNode
+        let Desert_sceneNode = self.childNode(withName: "Desert_scene") as! SKSpriteNode
         
         Space_sceneNode.texture = SKTexture(imageNamed: "Space_scene")
         Desert_sceneNode.texture = SKTexture(imageNamed: "Desert_scene")
@@ -29,6 +29,12 @@ class Main_page: SKScene {
             if node?.name  == "Space_scene" || node?.name == "SpaceText" {
                 let transition = SKTransition.doorsOpenHorizontal(withDuration: 0.5)
                 let gameScene = GameScene(fileNamed: "GameScene")
+                self.view?.presentScene(gameScene!, transition: transition)
+            }
+            
+            if node?.name  == "Desert_scene" || node?.name == "DesertText" {
+                let transition = SKTransition.doorsOpenHorizontal(withDuration: 0.5)
+                let gameScene = GameScene(fileNamed: "DesertGameScene")
                 self.view?.presentScene(gameScene!, transition: transition)
             }
         }
