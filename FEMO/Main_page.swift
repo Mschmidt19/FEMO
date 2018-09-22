@@ -14,8 +14,8 @@ class Main_page: SKScene {
     var Desert_sceneNode: SKSpriteNode!
     
     override func didMove(to view: SKView) {
-        let Space_sceneNode = self.childNode(withName: "Space_scene") as! SKSpriteNode
-        let Desert_sceneNode = self.childNode(withName: "Desert_scene") as! SKSpriteNode
+        Space_sceneNode = self.childNode(withName: "Space_scene") as! SKSpriteNode
+        Desert_sceneNode = self.childNode(withName: "Desert_scene") as! SKSpriteNode
         
         Space_sceneNode.texture = SKTexture(imageNamed: "Space_scene")
         Desert_sceneNode.texture = SKTexture(imageNamed: "Desert_scene")

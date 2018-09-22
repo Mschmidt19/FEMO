@@ -104,18 +104,17 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let location = touch.previousLocation(in: self)
-            let node = self.nodes(at: location).first
+        let touch = touches.first
+        
+        if let location = touch?.location(in: self) {
+            let node = self.nodes(at: location)
             
-            if node?.name == "nextTileButton" {
+            if node.first?.name == "nextTileButton" {
                 playTurn()
-            }
-            
-            if node?.name == "Menu_button" {
+            } else if node.first?.name == "Menu_button" {
                 let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
-                let menuPage = Main_page(size: self.size)
-                self.view?.presentScene(menuPage, transition: transition)
+                let menuPage = Main_page(fileNamed: "Main_page")
+                self.view?.presentScene(menuPage!, transition: transition)
             
             }
         }
