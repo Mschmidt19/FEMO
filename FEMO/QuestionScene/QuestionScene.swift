@@ -25,6 +25,8 @@ class QuestionScene: SKScene {
     var button3Background: SKSpriteNode!
     var button4Background: SKSpriteNode!
     
+    let buttonNames = ["button1Text", "button1Background", "button2Text", "button2Background", "button3Text", "button3Background", "button4Text", "button4Background"]
+    
     override func didMove(to view: SKView) {
         
         questionText = (self.childNode(withName: "questionText") as! SKLabelNode)
@@ -64,8 +66,6 @@ class QuestionScene: SKScene {
         button2Text.text = questionList[currentQuestion % questionCount].optionB
         button3Text.text = questionList[currentQuestion % questionCount].optionC
         button4Text.text = questionList[currentQuestion % questionCount].optionD
-        
-        currentQuestion += 1
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -73,19 +73,10 @@ class QuestionScene: SKScene {
         let touch = touches.first
         
         if let location = touch?.location(in: self) {
-            let node = self.nodes(at: location).first
-            if node?.name == "button1Text" || node?.name == "button1Background" {
-                saveGameState()
-                presentSpaceBoard()
-            } else if node?.name == "button2Text" || node?.name == "button2Background" {
-                saveGameState()
-                presentSpaceBoard()
-            } else if node?.name == "button3Text" || node?.name == "button3Background" {
-                saveGameState()
-                presentSpaceBoard()
-            } else if node?.name == "button4Text" || node?.name == "button4Background" {
-                saveGameState()
-                presentSpaceBoard()
+            if let node = self.nodes(at: location).first {
+                if buttonNames.contains(node.name!) {
+                    answerButtonPressed(node: node)
+                }
             }
         }
         
@@ -105,6 +96,19 @@ class QuestionScene: SKScene {
     func saveGameState() {
 //        userDefaults.set(questionList, forKey: "questionList")
         userDefaults.set(currentQuestion, forKey: "currentQuestion")
+    }
+    
+    func answerButtonPressed(node: SKNode) {
+        let questionCount = questionList.count
+        let tag = ((node.userData!.object(forKey: "tag")!) as! Int)
+        if tag == questionList[currentQuestion % questionCount].correctAnswer {
+            print("Correct")
+        } else {
+            print("Incorrect")
+        }
+        currentQuestion += 1
+        saveGameState()
+        presentSpaceBoard()
     }
 
 }
