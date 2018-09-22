@@ -11,6 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    let userDefaults = UserDefaults.standard
+    
     var viewController: GameViewController!
     
     var tilesArray:[SKSpriteNode]? = [SKSpriteNode]()
@@ -36,15 +38,28 @@ class GameScene: SKScene {
     func createPlayer1() {
         player1 = SKSpriteNode(imageNamed: "robot1")
         
-        guard let player1PositionX = tilesArray?.first?.position.x else {return}
-        guard let player1PositionY = tilesArray?.first?.position.y else {return}
+        guard let player1PositionX = tilesArray?[currentTile].position.x else {return}
+        guard let player1PositionY = tilesArray?[currentTile].position.y else {return}
         player1?.position = CGPoint(x: player1PositionX, y: player1PositionY + 15)
+        
+        let playerXScale = userDefaults.integer(forKey: "playerXScale")
+        if playerXScale != 0 {
+            player1?.xScale = CGFloat(playerXScale)
+        }
         
         self.addChild(player1!)
     }
     
     override func didMove(to view: SKView) {
         setupTiles()
+        
+        let savedTile = userDefaults.integer(forKey: "currentTile")
+        if savedTile > 0 {
+            currentTile = savedTile
+        } else {
+            currentTile = 0
+        }
+        
         createPlayer1()
     }
     
@@ -99,10 +114,16 @@ class GameScene: SKScene {
             if node?.name == "nextTileButton" {
                 playTurn()
             } else if node?.name == "showPopupButton" {
-                let sb = UIStoryboard(name: "QuestionPopupViewController", bundle: nil)
-                if let popup = sb.instantiateInitialViewController() {
-                    self.viewController.present(popup, animated: true)
-                }
+//                let sb = UIStoryboard(name: "QuestionPopupViewController", bundle: nil)
+//                if let popup = sb.instantiateInitialViewController() {
+//                    self.viewController.present(popup, animated: true)
+//                }
+                saveGameState()
+                let transition = SKTransition.reveal(with: .up, duration: 0.5)
+                let questionScene = GameScene(fileNamed: "QuestionScene")
+                self.view?.presentScene(questionScene!, transition: transition)
+            } else if node?.name == "resetDefaults" {
+                resetGameState()
             }
         }
     }
@@ -122,5 +143,20 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+    }
+    
+    func resetGameState() {
+        print("resetting game state")
+        let bundleIdentifier = Bundle.main.bundleIdentifier!
+        userDefaults.removePersistentDomain(forName: bundleIdentifier)
+    }
+    
+    func saveGameState() {
+        userDefaults.set(currentTile, forKey: "currentTile")
+        userDefaults.set(player1?.xScale, forKey: "playerXScale")
+    }
+    
+    func isKeyPresentInUserDefaults(key: String) -> Bool {
+        return userDefaults.object(forKey: key) != nil
     }
 }

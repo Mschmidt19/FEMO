@@ -21,6 +21,6 @@ class QuestionList {
         list.append(Question(questionText: "Question4", choiceA: "String13", choiceB: "String14", choiceC: "String15", choiceD: "String16", answer: 4))
         
         
-        list = list.shuffled()
+//        list = list.shuffled()
     }
 }
