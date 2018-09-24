@@ -32,11 +32,11 @@ class Main_page: SKScene {
                 self.view?.presentScene(gameScene!, transition: transition)
             }
             
-            if node?.name  == "Desert_scene" || node?.name == "DesertText" {
-                let transition = SKTransition.doorsOpenHorizontal(withDuration: 0.5)
-                let gameScene = GameScene(fileNamed: "DesertGameScene")
-                self.view?.presentScene(gameScene!, transition: transition)
-            }
+//            if node?.name  == "Desert_scene" || node?.name == "DesertText" {
+//                let transition = SKTransition.doorsOpenHorizontal(withDuration: 0.5)
+//                let gameScene = GameScene(fileNamed: "DesertGameScene")
+//                self.view?.presentScene(gameScene!, transition: transition)
+//            }
         }
     }
     

@@ -19,6 +19,9 @@ class InformationScene: SKScene {
         
         let menu_buttonNode = self.childNode(withName: "Menu_button") as! SKSpriteNode
         menu_buttonNode.texture = SKTexture(imageNamed: "menu_button")
+        
+        let play_buttonNode = self.childNode(withName: "Play_button") as! SKSpriteNode
+        play_buttonNode.texture = SKTexture(imageNamed: "playButton")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -31,7 +34,11 @@ class InformationScene: SKScene {
                 let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
                 let menuPage = Main_page(fileNamed: "Main_page")
                 self.view?.presentScene(menuPage!, transition: transition)
-            } 
+          } else if node.first?.name  == "Play_button" {
+                let transition = SKTransition.doorsOpenHorizontal(withDuration: 0.5)
+                let gameScene = GameScene(fileNamed: "GameScene")
+                self.view?.presentScene(gameScene!, transition: transition)
+            }
         }
     }
         
