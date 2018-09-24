@@ -93,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B6080D02158F1770082E71D /* Information_Page */ = {
+			isa = PBXGroup;
+			children = (
+				84896E052156AC43006489CE /* Information.sks */,
+				84896E072156AD1B006489CE /* InformationScene.swift */,
+			);
+			path = Information_Page;
+			sourceTree = "<group>";
+		};
 		3BE79E72215259C800E8FBB8 = {
 			isa = PBXGroup;
 			children = (
@@ -117,13 +126,12 @@
 		3BE79E7D215259C800E8FBB8 /* FEMO */ = {
 			isa = PBXGroup;
 			children = (
-				3BE79E7E215259C800E8FBB8 /* AppDelegate.swift */,
-				84896E052156AC43006489CE /* Information.sks */,
-				84896E072156AD1B006489CE /* InformationScene.swift */,
-				84896E042156ABF2006489CE /* Main_Page */,
-				3BE79E86215259C800E8FBB8 /* GameViewController.swift */,
-				3BE79E88215259C800E8FBB8 /* Main.storyboard */,
 				3BE79E82215259C800E8FBB8 /* Actions.sks */,
+				3BE79E86215259C800E8FBB8 /* GameViewController.swift */,
+				3BE79E7E215259C800E8FBB8 /* AppDelegate.swift */,
+				3B6080D02158F1770082E71D /* Information_Page */,
+				84896E042156ABF2006489CE /* Main_Page */,
+				3BE79E88215259C800E8FBB8 /* Main.storyboard */,
 				84166817215674F2000A6AE5 /* Space_board */,
 				3BE79E8B215259C800E8FBB8 /* Assets.xcassets */,
 				EAB15C922152958F00304419 /* Sounds */,
