@@ -11,7 +11,8 @@ import SpriteKit
 class InformationScene: SKScene {
     
     var InformationNode: SKSpriteNode!
-
+    var menu_buttonNode: SKSpriteNode!
+    var play_buttonNode: SKSpriteNode!
     
     override func didMove(to view: SKView) {
         InformationNode = self.childNode(withName: "Information_button") as! SKSpriteNode
@@ -41,5 +42,4 @@ class InformationScene: SKScene {
             }
         }
     }
-        
 }

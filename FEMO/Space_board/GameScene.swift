@@ -13,6 +13,8 @@ class GameScene: SKScene {
     
     var tilesArray:[SKSpriteNode]? = [SKSpriteNode]()
     var player1:SKSpriteNode?
+    var menu_buttonNode:SKSpriteNode?
+    var InformationNode:SKSpriteNode?
     
     var currentTile = 0
     var movingToTile = false
