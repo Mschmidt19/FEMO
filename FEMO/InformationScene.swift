@@ -14,9 +14,7 @@ class InformationScene: SKScene {
 
     
     override func didMove(to view: SKView) {
-        InformationNode = self.childNode(withName: "Random") as! SKSpriteNode
-  
-        
+        InformationNode = self.childNode(withName: "Information_button") as! SKSpriteNode
         InformationNode.texture = SKTexture(imageNamed: "green_alien")
     }
         

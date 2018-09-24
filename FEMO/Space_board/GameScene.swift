@@ -56,7 +56,7 @@ class GameScene: SKScene {
         menu_buttonNode.texture = SKTexture(imageNamed: "menu_button")
         
         let InformationNode = self.childNode(withName: "Information_button") as! SKSpriteNode
-        InformationNode.texture = SKTexture(imageNamed: "green_alien")
+        InformationNode.texture = SKTexture(imageNamed: "information_button")
         indexOfLastTile = (tilesArray?.index{$0 === tilesArray?.last})!
     }
     
@@ -118,9 +118,9 @@ class GameScene: SKScene {
                 let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
                 let menuPage = Main_page(fileNamed: "Main_page")
                 self.view?.presentScene(menuPage!, transition: transition)
-            } else if node.first?.name == "Random" {
+            } else if node.first?.name == "Information_button" {
                 let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
-                let information = InformationScene(fileNamed: "InformationScene")
+                let information = InformationScene(fileNamed: "Information")
                 self.view?.presentScene(information!, transition: transition)
             }
         }
