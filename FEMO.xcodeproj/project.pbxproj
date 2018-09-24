@@ -24,6 +24,7 @@
 		EA4E80CE21555DF50036CC2B /* QuestionScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA4E80CD21555DF50036CC2B /* QuestionScene.sks */; };
 		EA814AD021567693008E145C /* QuestionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA814ACF21567693008E145C /* QuestionScene.swift */; };
 		EAB15C942152958F00304419 /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAB15C932152958F00304419 /* tap.wav */; };
+		EAF2530F2158FD55001FB9CF /* Starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = EAF2530E2158FD55001FB9CF /* Starfield.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		EA4E80CD21555DF50036CC2B /* QuestionScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = QuestionScene.sks; sourceTree = "<group>"; };
 		EA814ACF21567693008E145C /* QuestionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionScene.swift; sourceTree = "<group>"; };
 		EAB15C932152958F00304419 /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
+		EAF2530E2158FD55001FB9CF /* Starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Starfield.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				EA814AD1215676A6008E145C /* QuestionScene */,
 				EA4E80CA215554DE0036CC2B /* SpaceGameScene */,
 				EAB15C922152958F00304419 /* Sounds */,
+				EAF2530E2158FD55001FB9CF /* Starfield.sks */,
 				3BE79E8B215259C800E8FBB8 /* Assets.xcassets */,
 				3BE79E8D215259C800E8FBB8 /* LaunchScreen.storyboard */,
 				3BE79E90215259C800E8FBB8 /* Info.plist */,
@@ -291,6 +294,7 @@
 				3BE79E81215259C800E8FBB8 /* GameScene.sks in Resources */,
 				3BE79E8C215259C800E8FBB8 /* Assets.xcassets in Resources */,
 				3BE79E8F215259C800E8FBB8 /* LaunchScreen.storyboard in Resources */,
+				EAF2530F2158FD55001FB9CF /* Starfield.sks in Resources */,
 				EA4E80CE21555DF50036CC2B /* QuestionScene.sks in Resources */,
 				3BE79E83215259C800E8FBB8 /* Actions.sks in Resources */,
 			);

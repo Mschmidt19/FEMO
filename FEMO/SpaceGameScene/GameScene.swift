@@ -25,10 +25,11 @@ class GameScene: SKScene {
     
     var dieRoll = 0
     
-    let textDisappearTimer = 2.0
+    let textDisappearTimer = 4.0
     
     var questionInProgress = false
     
+    var starField: SKEmitterNode!
     var lastAnswerLabel: SKLabelNode!
     var dieRollLabel: SKLabelNode!
     
@@ -68,6 +69,9 @@ class GameScene: SKScene {
         setupTiles()
         
         createPlayer1()
+        
+        starField = (self.childNode(withName: "starField") as! SKEmitterNode)
+        starField.advanceSimulationTime(14)
         
         dieRollLabel = (self.childNode(withName: "dieRollLabel") as! SKLabelNode)
         
@@ -122,17 +126,21 @@ class GameScene: SKScene {
     }
     
     func displayCorrectOrIncorrectWithTimer() {
-        if isKeyPresentInUserDefaults(key: "lastAnswerCorrect") {
-            if userDefaults.bool(forKey: "lastAnswerCorrect") == true {
-                lastAnswerLabel.text = "Correct"
+        if userDefaults.bool(forKey: "turnInProgress") {
+            if isKeyPresentInUserDefaults(key: "lastAnswerCorrect") {
+                if userDefaults.bool(forKey: "lastAnswerCorrect") == true {
+                    lastAnswerLabel.fontColor = SKColor.green
+                    lastAnswerLabel.text = "Correct"
+                } else {
+                    lastAnswerLabel.fontColor = SKColor.red
+                    lastAnswerLabel.text = "Incorrect"
+                }
             } else {
-                lastAnswerLabel.text = "Incorrect"
+                lastAnswerLabel.text = ""
             }
-        } else {
-            lastAnswerLabel.text = ""
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + textDisappearTimer) {
-            self.lastAnswerLabel.text = ""
+            DispatchQueue.main.asyncAfter(deadline: .now() + textDisappearTimer) {
+                self.lastAnswerLabel.text = ""
+            }
         }
     }
     

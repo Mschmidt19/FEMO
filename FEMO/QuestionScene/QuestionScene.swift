@@ -15,6 +15,8 @@ class QuestionScene: SKScene {
     var questionList = [Question]()
     var currentQuestion = 0
     
+    var starField: SKEmitterNode!
+    
     var questionText: SKLabelNode!
     var button1Text: SKLabelNode!
     var button2Text: SKLabelNode!
@@ -28,6 +30,10 @@ class QuestionScene: SKScene {
     let buttonNames = ["button1Text", "button1Background", "button2Text", "button2Background", "button3Text", "button3Background", "button4Text", "button4Background"]
     
     override func didMove(to view: SKView) {
+        
+        starField = (self.childNode(withName: "starField") as! SKEmitterNode)
+        starField.advanceSimulationTime(14)
+
         
         questionText = (self.childNode(withName: "questionText") as! SKLabelNode)
         button1Text = (self.childNode(withName: "button1Text") as! SKLabelNode)
