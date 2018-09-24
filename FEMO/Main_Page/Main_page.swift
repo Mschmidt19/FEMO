@@ -17,8 +17,8 @@ class Main_page: SKScene {
         Space_sceneNode = self.childNode(withName: "Space_scene") as! SKSpriteNode
         Desert_sceneNode = self.childNode(withName: "Desert_scene") as! SKSpriteNode
         
-        Space_sceneNode.texture = SKTexture(imageNamed: "Space_scene")
-        Desert_sceneNode.texture = SKTexture(imageNamed: "Desert_scene")
+        Space_sceneNode.texture = SKTexture(imageNamed: "new_button")
+        Desert_sceneNode.texture = SKTexture(imageNamed: "new_button")
         
     }
     
