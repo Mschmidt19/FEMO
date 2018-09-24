@@ -40,6 +40,12 @@ class GameScene: SKScene {
     func createPlayer1() {
         player1 = SKSpriteNode(imageNamed: "robot1")
         
+        if isKeyPresentInUserDefaults(key: "currentTile") {
+            currentTile = userDefaults.integer(forKey: "currentTile")
+        } else {
+            currentTile = 0
+        }
+        
         guard let player1PositionX = tilesArray?[currentTile].position.x else {return}
         guard let player1PositionY = tilesArray?[currentTile].position.y else {return}
         player1?.position = CGPoint(x: player1PositionX, y: player1PositionY + 15)
@@ -56,11 +62,6 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         setupTiles()
         
-        if isKeyPresentInUserDefaults(key: "currentTile") {
-            currentTile = userDefaults.integer(forKey: "currentTile")
-        } else {
-            currentTile = 0
-        }
         createPlayer1()
         
         lastAnswerLabel = (self.childNode(withName: "popupAnswerLabel") as! SKLabelNode)
@@ -162,6 +163,9 @@ class GameScene: SKScene {
         print("resetting game state")
         let bundleIdentifier = Bundle.main.bundleIdentifier!
         userDefaults.removePersistentDomain(forName: bundleIdentifier)
+        currentTile = 0
+        player1?.position = CGPoint(x: tilesArray!.first!.position.x, y: tilesArray!.first!.position.y + 15)
+        player1?.xScale = 1
     }
     
     func saveGameState() {
