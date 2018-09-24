@@ -13,6 +13,8 @@ class GameScene: SKScene {
     
     var tilesArray:[SKSpriteNode]? = [SKSpriteNode]()
     var player1:SKSpriteNode?
+    var menu_buttonNode:SKSpriteNode?
+    var InformationNode:SKSpriteNode?
     
     var currentTile = 0
     var movingToTile = false
@@ -52,6 +54,11 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         setupTiles()
         createPlayer1()
+        let menu_buttonNode = self.childNode(withName: "Menu_button") as! SKSpriteNode
+        menu_buttonNode.texture = SKTexture(imageNamed: "menu_button")
+        
+        let InformationNode = self.childNode(withName: "Information_button") as! SKSpriteNode
+        InformationNode.texture = SKTexture(imageNamed: "information_button")
         indexOfLastTile = (tilesArray?.index{$0 === tilesArray?.last})!
     }
     
@@ -102,12 +109,21 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let location = touch.previousLocation(in: self)
-            let node = self.nodes(at: location).first
+        let touch = touches.first
+        
+        if let location = touch?.location(in: self) {
+            let node = self.nodes(at: location)
             
-            if node?.name == "nextTileButton" {
+            if node.first?.name == "nextTileButton" {
                 playTurn()
+            } else if node.first?.name == "Menu_button" {
+                let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
+                let menuPage = Main_page(fileNamed: "Main_page")
+                self.view?.presentScene(menuPage!, transition: transition)
+            } else if node.first?.name == "Information_button" {
+                let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
+                let information = InformationScene(fileNamed: "Information")
+                self.view?.presentScene(information!, transition: transition)
             }
         }
     }
