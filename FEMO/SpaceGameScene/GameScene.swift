@@ -180,6 +180,20 @@ class GameScene: SKScene {
         let questionScene = GameScene(fileNamed: "QuestionScene")
         self.view?.presentScene(questionScene!, transition: transition)
     }
+    
+    func goToInfoScene() {
+        saveGameState()
+        let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
+        let information = InformationScene(fileNamed: "Information")
+        self.view?.presentScene(information!, transition: transition)
+    }
+    
+    func goToHomeScene() {
+        saveGameState()
+        let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
+        let menuPage = Main_page(fileNamed: "Main_page")
+        self.view?.presentScene(menuPage!, transition: transition)
+    }
 
     func canPlayTurn() -> Bool {
         if (userDefaults.bool(forKey: "lastAnswerCorrect") && userDefaults.bool(forKey: "turnInProgress")) {
@@ -199,13 +213,9 @@ class GameScene: SKScene {
             } else if node?.name == "resetDefaults" {
                 resetGameState()
             } else if node?.name == "Menu_button" {
-                let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
-                let menuPage = Main_page(fileNamed: "Main_page")
-                self.view?.presentScene(menuPage!, transition: transition)
+                goToHomeScene()
             } else if node?.name == "Information_button" {
-                let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
-                let information = InformationScene(fileNamed: "Information")
-                self.view?.presentScene(information!, transition: transition)
+                goToInfoScene()
             }
         }
     }
