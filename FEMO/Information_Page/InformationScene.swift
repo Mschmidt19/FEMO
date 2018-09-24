@@ -15,7 +15,11 @@ class InformationScene: SKScene {
     var play_buttonNode: SKSpriteNode!
     
     override func didMove(to view: SKView) {
+<<<<<<< HEAD
         InformationNode = (self.childNode(withName: "Information_button") as! SKSpriteNode)
+=======
+        InformationNode = self.childNode(withName: "Information_button") as! SKSpriteNode
+>>>>>>> 9c7c1f148232e5651374c1488bb43be0e6869284
         InformationNode.texture = SKTexture(imageNamed: "green_alien")
         
         let menu_buttonNode = self.childNode(withName: "Menu_button") as! SKSpriteNode
