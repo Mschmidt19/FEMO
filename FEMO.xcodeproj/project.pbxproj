@@ -10,7 +10,6 @@
 		3BE79E7F215259C800E8FBB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79E7E215259C800E8FBB8 /* AppDelegate.swift */; };
 		3BE79E81215259C800E8FBB8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79E80215259C800E8FBB8 /* GameScene.sks */; };
 		3BE79E83215259C800E8FBB8 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79E82215259C800E8FBB8 /* Actions.sks */; };
-		3BE79E85215259C800E8FBB8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79E84215259C800E8FBB8 /* GameScene.swift */; };
 		3BE79E87215259C800E8FBB8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79E86215259C800E8FBB8 /* GameViewController.swift */; };
 		3BE79E8A215259C800E8FBB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79E88215259C800E8FBB8 /* Main.storyboard */; };
 		3BE79E8C215259C800E8FBB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79E8B215259C800E8FBB8 /* Assets.xcassets */; };
@@ -24,6 +23,12 @@
 		EA4E80CE21555DF50036CC2B /* QuestionScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA4E80CD21555DF50036CC2B /* QuestionScene.sks */; };
 		EA814AD021567693008E145C /* QuestionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA814ACF21567693008E145C /* QuestionScene.swift */; };
 		EAB15C942152958F00304419 /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAB15C932152958F00304419 /* tap.wav */; };
+		EADEA1F9215922220012211A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADEA1F8215922220012211A /* GameScene.swift */; };
+		EADEA1FB215922300012211A /* Ta Da-Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = EADEA1FA215922300012211A /* Ta Da-Sound.wav */; };
+		EADEA1FF2159223A0012211A /* Information.sks in Resources */ = {isa = PBXBuildFile; fileRef = EADEA1FD2159223A0012211A /* Information.sks */; };
+		EADEA2002159223A0012211A /* InformationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADEA1FE2159223A0012211A /* InformationScene.swift */; };
+		EADEA204215922400012211A /* Main_page.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADEA202215922400012211A /* Main_page.swift */; };
+		EADEA205215922400012211A /* Main_page.sks in Resources */ = {isa = PBXBuildFile; fileRef = EADEA203215922400012211A /* Main_page.sks */; };
 		EAF2530F2158FD55001FB9CF /* Starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = EAF2530E2158FD55001FB9CF /* Starfield.sks */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +54,6 @@
 		3BE79E7E215259C800E8FBB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BE79E80215259C800E8FBB8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		3BE79E82215259C800E8FBB8 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		3BE79E84215259C800E8FBB8 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		3BE79E86215259C800E8FBB8 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		3BE79E89215259C800E8FBB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BE79E8B215259C800E8FBB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +73,12 @@
 		EA4E80CD21555DF50036CC2B /* QuestionScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = QuestionScene.sks; sourceTree = "<group>"; };
 		EA814ACF21567693008E145C /* QuestionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionScene.swift; sourceTree = "<group>"; };
 		EAB15C932152958F00304419 /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
+		EADEA1F8215922220012211A /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		EADEA1FA215922300012211A /* Ta Da-Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Ta Da-Sound.wav"; path = "../../../../Desktop/tempFEMOfiles/Ta Da-Sound.wav"; sourceTree = "<group>"; };
+		EADEA1FD2159223A0012211A /* Information.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Information.sks; sourceTree = "<group>"; };
+		EADEA1FE2159223A0012211A /* InformationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationScene.swift; sourceTree = "<group>"; };
+		EADEA202215922400012211A /* Main_page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_page.swift; sourceTree = "<group>"; };
+		EADEA203215922400012211A /* Main_page.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Main_page.sks; sourceTree = "<group>"; };
 		EAF2530E2158FD55001FB9CF /* Starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Starfield.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +135,8 @@
 				3BE79E86215259C800E8FBB8 /* GameViewController.swift */,
 				3BE79E82215259C800E8FBB8 /* Actions.sks */,
 				3BE79E88215259C800E8FBB8 /* Main.storyboard */,
+				EADEA201215922400012211A /* Main_Page */,
+				EADEA1FC2159223A0012211A /* Information_Page */,
 				EA814AD1215676A6008E145C /* QuestionScene */,
 				EA4E80CA215554DE0036CC2B /* SpaceGameScene */,
 				EAB15C922152958F00304419 /* Sounds */,
@@ -162,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				3BE79E80215259C800E8FBB8 /* GameScene.sks */,
-				3BE79E84215259C800E8FBB8 /* GameScene.swift */,
+				EADEA1F8215922220012211A /* GameScene.swift */,
 			);
 			path = SpaceGameScene;
 			sourceTree = "<group>";
@@ -179,9 +191,28 @@
 		EAB15C922152958F00304419 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				EADEA1FA215922300012211A /* Ta Da-Sound.wav */,
 				EAB15C932152958F00304419 /* tap.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		EADEA1FC2159223A0012211A /* Information_Page */ = {
+			isa = PBXGroup;
+			children = (
+				EADEA1FD2159223A0012211A /* Information.sks */,
+				EADEA1FE2159223A0012211A /* InformationScene.swift */,
+			);
+			path = Information_Page;
+			sourceTree = "<group>";
+		};
+		EADEA201215922400012211A /* Main_Page */ = {
+			isa = PBXGroup;
+			children = (
+				EADEA202215922400012211A /* Main_page.swift */,
+				EADEA203215922400012211A /* Main_page.sks */,
+			);
+			path = Main_Page;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,12 +320,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB15C942152958F00304419 /* tap.wav in Resources */,
+				EADEA205215922400012211A /* Main_page.sks in Resources */,
 				3BE79E8A215259C800E8FBB8 /* Main.storyboard in Resources */,
 				EA4E80BE2154F49A0036CC2B /* QuestionPopupViewController.storyboard in Resources */,
 				3BE79E81215259C800E8FBB8 /* GameScene.sks in Resources */,
+				EADEA1FF2159223A0012211A /* Information.sks in Resources */,
 				3BE79E8C215259C800E8FBB8 /* Assets.xcassets in Resources */,
 				3BE79E8F215259C800E8FBB8 /* LaunchScreen.storyboard in Resources */,
 				EAF2530F2158FD55001FB9CF /* Starfield.sks in Resources */,
+				EADEA1FB215922300012211A /* Ta Da-Sound.wav in Resources */,
 				EA4E80CE21555DF50036CC2B /* QuestionScene.sks in Resources */,
 				3BE79E83215259C800E8FBB8 /* Actions.sks in Resources */,
 			);
@@ -323,9 +357,11 @@
 			files = (
 				EA4E80C5215523900036CC2B /* Question.swift in Sources */,
 				EA814AD021567693008E145C /* QuestionScene.swift in Sources */,
-				3BE79E85215259C800E8FBB8 /* GameScene.swift in Sources */,
+				EADEA204215922400012211A /* Main_page.swift in Sources */,
+				EADEA1F9215922220012211A /* GameScene.swift in Sources */,
 				3BE79E87215259C800E8FBB8 /* GameViewController.swift in Sources */,
 				EA4E80C72155247E0036CC2B /* QuestionList.swift in Sources */,
+				EADEA2002159223A0012211A /* InformationScene.swift in Sources */,
 				EA4E80BB2154EA4B0036CC2B /* QuestionViewController.swift in Sources */,
 				3BE79E7F215259C800E8FBB8 /* AppDelegate.swift in Sources */,
 			);
