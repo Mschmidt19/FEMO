@@ -25,7 +25,12 @@ class GameScene: SKScene {
     
     var dieRoll = 0
     
+    let textDisappearTimer = 2.0
+    
+    var questionInProgress = false
+    
     var lastAnswerLabel: SKLabelNode!
+    var dieRollLabel: SKLabelNode!
     
     let moveSound = SKAction.playSoundFileNamed("tap.wav", waitForCompletion: false)
     
@@ -64,16 +69,17 @@ class GameScene: SKScene {
         
         createPlayer1()
         
+        dieRollLabel = (self.childNode(withName: "dieRollLabel") as! SKLabelNode)
+        
         lastAnswerLabel = (self.childNode(withName: "popupAnswerLabel") as! SKLabelNode)
-        if isKeyPresentInUserDefaults(key: "lastAnswerCorrect") {
-            if userDefaults.bool(forKey: "lastAnswerCorrect") == true {
-                lastAnswerLabel.text = "Correct"
-            } else {
-                lastAnswerLabel.text = "Incorrect"
-            }
-        } else {
-            lastAnswerLabel.text = ""
+        
+        displayCorrectOrIncorrectWithTimer()
+        
+        if canPlayTurn() {
+            playTurn()
         }
+        
+        userDefaults.set(false, forKey: "turnInProgress")
         
     }
     
@@ -108,9 +114,31 @@ class GameScene: SKScene {
         dieRoll = Int(roll)
     }
     
+    func displayDieRollWithTimer() {
+        dieRollLabel.text = "You rolled a \(dieRoll)"
+        DispatchQueue.main.asyncAfter(deadline: .now() + textDisappearTimer) {
+            self.dieRollLabel.text = ""
+        }
+    }
+    
+    func displayCorrectOrIncorrectWithTimer() {
+        if isKeyPresentInUserDefaults(key: "lastAnswerCorrect") {
+            if userDefaults.bool(forKey: "lastAnswerCorrect") == true {
+                lastAnswerLabel.text = "Correct"
+            } else {
+                lastAnswerLabel.text = "Incorrect"
+            }
+        } else {
+            lastAnswerLabel.text = ""
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + textDisappearTimer) {
+            self.lastAnswerLabel.text = ""
+        }
+    }
+    
     func playTurn() {
         rollDie()
-        print("You rolled \(dieRoll)")
+        displayDieRollWithTimer()
         var delayAdder = moveDuration
         for _ in 1 ... dieRoll {
             DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
@@ -120,22 +148,29 @@ class GameScene: SKScene {
         }
     }
     
+    func askQuestion() {
+        userDefaults.set(true, forKey: "turnInProgress")
+        saveGameState()
+        let transition = SKTransition.reveal(with: .up, duration: 0.5)
+        let questionScene = GameScene(fileNamed: "QuestionScene")
+        self.view?.presentScene(questionScene!, transition: transition)
+    }
+    
+    func canPlayTurn() -> Bool {
+        if (userDefaults.bool(forKey: "lastAnswerCorrect") && userDefaults.bool(forKey: "turnInProgress")) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.previousLocation(in: self)
             let node = self.nodes(at: location).first
             
             if node?.name == "nextTileButton" {
-                playTurn()
-            } else if node?.name == "showPopupButton" {
-//                let sb = UIStoryboard(name: "QuestionPopupViewController", bundle: nil)
-//                if let popup = sb.instantiateInitialViewController() {
-//                    self.viewController.present(popup, animated: true)
-//                }
-                saveGameState()
-                let transition = SKTransition.reveal(with: .up, duration: 0.5)
-                let questionScene = GameScene(fileNamed: "QuestionScene")
-                self.view?.presentScene(questionScene!, transition: transition)
+                askQuestion()
             } else if node?.name == "resetDefaults" {
                 resetGameState()
             }
