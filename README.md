@@ -90,14 +90,7 @@ I want to move 1 extra move
 
 
 ## How to use/install
-Download xcode from [here](https://developer.apple.com/xcode/)
-From the comand line 
-- `git clone https://github.com/fabjab86/FEMO.git`
-- `cd FEMO`
-- `open FEMO.xcodeproj`
-
-On the left side of the project pane [pic](projectFiles.png)
-Pull the FEMO.app icon on to your laptop screen and open it to start playing the game  
+Please visit this [repo](https://github.com/fabjab86/FEMO1) for instructions  
 
 ## Boards and blogs
 [Trello](https://trello.com/b/NeNjHIRE/bejewellled-code-app)
