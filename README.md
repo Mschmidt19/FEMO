@@ -92,12 +92,6 @@ I want to move 1 extra move
 ## How to use/install
 Please visit this [repo](https://github.com/fabjab86/FEMO1) for instructions  
 
-## Boards and blogs
-[Trello](https://trello.com/b/NeNjHIRE/bejewellled-code-app)
-
-[Medium](https://medium.com/teamfemo)
-
-[Deployed](#)
 
 
 
